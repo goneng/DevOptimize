@@ -8,11 +8,11 @@ Best-practices for naming hosts
 - [Choose a Valid Hostname](#choose-a-valid-hostname)
 - [Change the Hostname](#change-the-hostname)
 - [Assign a Loopback Address to the Hostname](#assign-a-loopback-address-to-the-hostname)
+- [Reboot](#reboot)
 - [Check the host name](#check-the-host-name)
   - [Verify that the host-name is set correctly](#verify-that-the-host-name-is-set-correctly)
   - [Verify that the FQDN is set correctly](#verify-that-the-fqdn-is-set-correctly)
 - [Optional - Disable multicast DNS](#optional---disable-multicast-dns)
-- [Reboot - for the hostname](#reboot---for-the-hostname)
 
 ## Prerequisites
 
@@ -56,6 +56,15 @@ For example:
 
 Remove any other references to hostname-fqdn or hostname from other entries in the file.
 
+## Reboot
+
+Reboot the server so the changes will take effect,\
+for example:
+
+```bash
+sudo reboot
+```
+
 ## Check the host name
 
 ### Verify that the host-name is set correctly
@@ -93,12 +102,4 @@ To:
 
 ```text
 hosts: files dns
-```
-
-## Reboot - for the hostname
-
-Reboot the host - for example:
-
-```bash
-sudo reboot
 ```
