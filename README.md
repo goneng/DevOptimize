@@ -17,7 +17,9 @@ DevOps Tips
   - on PluralSight:
     - [Mastering git](https://www.pluralsight.com/courses/mastering-git#)
     - [How git Works](https://www.pluralsight.com/courses/how-git-works#)
+- [git Tips](./git/git_Tips.md)
 - [Learn Git-Branching via a Game(!)](https://learngitbranching.js.org/)
+- [Set git-prompt for Unix](./git/Set_Git-Prompt_for_Unix.md)
 
 ## Python
 
