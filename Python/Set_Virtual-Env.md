@@ -15,19 +15,25 @@ Set a sandboxed Python environment\
 
 ## What is it good for
 
-'virtualenv' is a tool that allows you to set an isolated installation of Python,\
-complete with the Python-executable and all the relevant modules.
+**virtualenv** is a tool that allows you to set an _isolated_ installation of Python,\
+complete with the Python-executable and all the required modules.
 
 To confirm everything is set as required, the setup can be run every time before using the environment -\
 if all is already configured, it will just verify that and continue.
 
-see [virtualenv Lives!](https://hynek.me/articles/virtualenv-lives/)
+See **[virtualenv Lives!](https://hynek.me/articles/virtualenv-lives/)** where it says, among other things:
+
+"Setting up Python to the point to be able install packages\
+from PyPI can be annoying and time-intensive.\
+Even worse are OS-provided installations that start throwing cryptic error messages.\
+Especially desktops are prone to that but it’s possible to break the whole toolchain\
+of a server by installing some shiny package you heard about on reddit."
 
 ## One-Time Effort
 
 ### Setup the Host
 
-'virtualenv' should be pre-installed as root:
+`virtualenv` should be pre-installed as root:
 
 ```bash
 sudo pip3 install virtualenv
@@ -44,8 +50,8 @@ PyNaCl==1.2.0
 PyYAML==3.12
 ```
 
-- This list can be updated from time to time, as needed\
-- Make sure all modules are set to a specific version (with the '==' operator)
+- The list should reflect all required modules and their versions
+- Make sure all modules are set to a specific version (with the `==` operator)
 
 ## Create and Use the Virtual-Env
 
