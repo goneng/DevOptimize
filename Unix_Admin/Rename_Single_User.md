@@ -8,6 +8,7 @@ this allows you to reassign the machine without reinstalling it.
 - [Rename User](#rename-user)
   - [Disable Auto-Login](#disable-auto-login)
   - [Unlock the root Account](#unlock-the-root-account)
+  - [Optional: Allow SSH-Access to the root Account](#optional-allow-ssh-access-to-the-root-account)
   - [Switch User to root](#switch-user-to-root)
   - [Rename the User](#rename-the-user)
   - [Rename the Group](#rename-the-group)
@@ -29,6 +30,18 @@ this allows you to reassign the machine without reinstalling it.
 ### Unlock the root Account
 
 Set a password for your 'root' account -
+
+```bash
+sudo -i
+...
+passwd
+... (password)
+... (again)
+```
+
+### Optional: Allow SSH-Access to the root Account
+
+...
 
 ```bash
 sudo -i
@@ -61,7 +74,7 @@ groupmod -n <newgroup> <oldgroup>
 Change the password:
 
 ```bash
-passwd
+passwd <newname>
 ... (new password)
 ... (again)
 ```
