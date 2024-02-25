@@ -1,9 +1,9 @@
-# Rename User and/or Host <!-- omit in toc -->
+# Rename User (on single-user Ubuntu machines) <!-- omit in toc -->
 
 On a single-user Linux (like X/Ubuntu)\
 this allows you to reassign the machine without reinstalling it.
 
-(base on <https://hepeng.me/changing-username-and-hostname-on-ubuntu/)>
+(base on [Change the Username and Hostname on Ubuntu](https://hepeng.me/changing-username-and-hostname-on-ubuntu/))
 
 - [Rename User](#rename-user)
   - [Disable Auto-Login](#disable-auto-login)
@@ -15,13 +15,8 @@ this allows you to reassign the machine without reinstalling it.
   - [Fix Permissions in Home-Dir](#fix-permissions-in-home-dir)
   - [Confirm You can Log-In](#confirm-you-can-log-in)
   - [Optional: Lock the root Account](#optional-lock-the-root-account)
-- [Rename Host](#rename-host)
-  - [Change the Hostname](#change-the-hostname)
-  - [Fix the Hosts-List](#fix-the-hosts-list)
-  - [Reboot - for the hostname](#reboot---for-the-hostname)
 - [Troubleshooting](#troubleshooting)
   - [Error: Configured directory for incoming files does not exist](#error-configured-directory-for-incoming-files-does-not-exist)
-- [Enjoy your New Host](#enjoy-your-new-host)
 
 ## Rename User
 
@@ -93,32 +88,6 @@ Re-connect as `root` and run this:
 passwd -l root
 ```
 
-## Rename Host
-
-### Change the Hostname
-
-Change the host-name to the new one:
-
-```bash
-sudo nano /etc/hostname
-```
-
-### Fix the Hosts-List
-
-Change any occurrence of the old host-name to the new one:
-
-```bash
-sudo nano /etc/hosts
-```
-
-### Reboot - for the hostname
-
-Reboot the host - for example:
-
-```bash
-sudo reboot
-```
-
 ## Troubleshooting
 
 ### Error: Configured directory for incoming files does not exist
@@ -135,7 +104,3 @@ sudo reboot
   - Wait a few seconds for the dialog to pop
   - Choose **Transfer** and set an **Incoming Folder**
 - From: https://askubuntu.com/a/874145/138065
-
-## Enjoy your New Host
-
-:)
