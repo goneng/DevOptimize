@@ -10,27 +10,31 @@ A safe way to add a user to a group\
 - [Confirm Noting was Lost](#confirm-noting-was-lost)
 
 
-## List the Current Groups of the User ##
+## List the Current Groups of the User
 
 ```bash
 id -nG
 ```
 
-## Enlist the User as Part of the Group ##
+## Enlist the User as Part of the Group
 
 ```bash
 sudo usermod -a -G <group-name> <user-name>
 ```
 
-## Confirm Noting was Lost ##
+## Confirm Noting was Lost
 
 - Open a new Login-shell
+
     ```bash
     sudo login -f <user-name>
     ```
+
 - List your groups and compare the list to the original one
+
     ```bash
     id -nG
     ```
+
 - If you have lost any groups, review your work and fix as needed\
     (may need to enroll in the missing groups one-by-one)

@@ -23,15 +23,15 @@ this allows you to reassign the machine without reinstalling it.
   - [Error: Configured directory for incoming files does not exist](#error-configured-directory-for-incoming-files-does-not-exist)
 - [Enjoy your New Host](#enjoy-your-new-host)
 
-## Rename User ##
+## Rename User
 
-### Disable Auto-Login ###
+### Disable Auto-Login
 
 (so you could log-in as root)
 
 ...
 
-### Unlock the root Account ###
+### Unlock the root Account
 
 Set a password for your 'root' account -
 
@@ -43,17 +43,17 @@ passwd
 ... (again)
 ```
 
-### Switch User to root ###
+### Switch User to root
 
 Reboot, and log-in as 'root'
 
-### Rename the User ###
+### Rename the User
 
 ```bash
 usermod -l <newname> -d /home/<newname> -m <oldname>
 ```
 
-### Rename the Group ###
+### Rename the Group
 
 (In single-user mode, it is named like the user)
 
@@ -61,7 +61,7 @@ usermod -l <newname> -d /home/<newname> -m <oldname>
 groupmod -n <newgroup> <oldgroup>
 ```
 
-### Optional: Change the User's Password ###
+### Optional: Change the User's Password
 
 Change the password:
 
@@ -71,7 +71,7 @@ passwd
 ... (again)
 ```
 
-### Fix Permissions in Home-Dir ###
+### Fix Permissions in Home-Dir
 
 (this may get trashed because you've connected as `root`)
 
@@ -79,13 +79,13 @@ passwd
 sudo chown -R <newname>:<newname> /home/<newname>
 ```
 
-### Confirm You can Log-In ###
+### Confirm You can Log-In
 
 Reboot and log-in as your new user
 
 (**if it fails - re-login as `root` and fix whatever went wrong**)
 
-### Optional: Lock the root Account ###
+### Optional: Lock the root Account
 
 Re-connect as `root` and run this:
 
@@ -93,9 +93,9 @@ Re-connect as `root` and run this:
 passwd -l root
 ```
 
-## Rename Host ##
+## Rename Host
 
-### Change the Hostname ###
+### Change the Hostname
 
 Change the host-name to the new one:
 
@@ -103,7 +103,7 @@ Change the host-name to the new one:
 sudo nano /etc/hostname
 ```
 
-### Fix the Hosts-List ###
+### Fix the Hosts-List
 
 Change any occurrence of the old host-name to the new one:
 
@@ -111,7 +111,7 @@ Change any occurrence of the old host-name to the new one:
 sudo nano /etc/hosts
 ```
 
-### Reboot - for the hostname ###
+### Reboot - for the hostname
 
 Reboot the host - for example:
 
@@ -119,22 +119,23 @@ Reboot the host - for example:
 sudo reboot
 ```
 
-## Troubleshooting ##
+## Troubleshooting
 
-### Error: Configured directory for incoming files does not exist ###
+### Error: Configured directory for incoming files does not exist
 
 - Cause: The `Download` directory had moved
 - Resolution:
-  Log-in as `root`, then run
-  ```
-  su - <newname>
-  sudo blueman-services &
-  ```
+    Log-in as `root`, then run
+
+    ```bash
+    su - <newname>
+    sudo blueman-services &
+    ```
+
   - Wait a few seconds for the dialog to pop
   - Choose **Transfer** and set an **Incoming Folder**
 - From: https://askubuntu.com/a/874145/138065
 
-## Enjoy your New Host ##
+## Enjoy your New Host
 
 :)
-
