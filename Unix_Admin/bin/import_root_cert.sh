@@ -23,10 +23,35 @@ CERT_NAME=$2
 
 # FUNCTIONS ----------------------------------------------------------------------------------------
 
-function usage_msg {
-  MSG=$1
+function add_cert {
+  cert_db_type=$1
+  cert_db_path=$2
+  cert_dest=$3
+  cert_name=$4
+  cert_dir=$(dirname ${cert_db_path})
+
+  echo "-I- Adding certificate '${cert_dest}'"
+  echo "                    as '${cert_name}'"
+  sudo certutil -A -n "${cert_name}" -t "TCu,Cu,Tu" -i ${cert_dest} -d ${cert_db_type}:${cert_dir}
   echo
-  echo "${MSG}"
+}
+
+function list_certs {
+  cert_db_type=$1
+  cert_db_path=$2
+  cert_dir=$(dirname ${cert_db_path})
+  cert_connection=${cert_db_type}:${cert_dir}
+
+  echo "-I- Existing Certificates __________________________________________"
+  echo "    (${cert_connection})"
+  certutil -d ${cert_connection} -L
+  echo
+}
+
+function usage_msg {
+  message_text=$1
+  echo
+  echo "${message_text}"
   echo
   echo "-I- Usage:"
   echo "-I-   ${SCRIPT_NAME}  [cert-file] [cert-name]"
@@ -73,35 +98,31 @@ fi
 # (see https://punkwalrus.livejournal.com/1198022.html )
 CURR_TIME=`date +%Y-%m-%d_%H-%M`
 CERT_NAME="${CERT_NAME} (${CURR_TIME})"
+CERT_FILE_BASE=$(basename $CERT_FILE)
+CERT_FILE_DEST=${CERT_DEST}/${CERT_FILE_BASE}
 
 echo "-I- Copying the certificate '${CERT_FILE}'"
 echo "-I-                      to '${CERT_DEST}'"
 sudo cp ${CERT_FILE} "${CERT_DEST}/"
+echo
 
 ### For cert8 (legacy - DBM)
-for certDB in $(find ${HOME}/ -name "cert8.db")
+for CERT_DB in $(find ${HOME}/ -name "cert8.db")
 do
-  certdir=$(dirname ${certDB});
-  echo "-I- Existing Certificates __________________________________________"
-  certutil -d dbm:${certdir} -L
-  echo
-  echo "-I- Adding the certificate as '${CERT_NAME}'"
-  certutil -A -n "${CERT_NAME}" -t "TCu,Cu,Tu" -i ${CERT_FILE} -d dbm:${certdir}
-  echo
-  echo "-I- To DELETE any certificate, run:"
-  echo "certutil -d dbm:${certdir} -D -n '<certificate nickname>'"
+  list_certs dbm "${CERT_DB}"
+  add_cert   dbm "${CERT_DB}" "${CERT_FILE_DEST}" "${CERT_NAME}"
 done
 
 ### For cert9 (SQL)
-for certDB in $(find ${HOME}/ -name "cert9.db")
+for CERT_DB in $(find ${HOME}/ -name "cert9.db")
 do
-  certdir=$(dirname ${certDB});
-  echo "-I- Existing Certificates __________________________________________"
-  certutil -d sql:${certdir} -L
-  echo
-  echo "-I- Adding the certificate as '${CERT_NAME}'"
-  certutil -A -n "${CERT_NAME}" -t "TCu,Cu,Tu" -i ${CERT_FILE} -d sql:${certdir}
-  echo
-  echo "-I- To DELETE any certificate, run:"
-  echo "certutil -d sql:${certdir} -D -n '<certificate nickname>'"
+  list_certs sql "${CERT_DB}"
+  add_cert   sql "${CERT_DB}" "${CERT_FILE_DEST}" "${CERT_NAME}"
 done
+
+echo
+echo "-I- To DELETE any certificate, run:"
+echo "    certutil -d [dbm|sql]:<cert-dir> -D -n '<certificate nickname>'"
+echo
+
+exit 0
