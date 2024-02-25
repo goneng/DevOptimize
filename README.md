@@ -43,6 +43,7 @@ DevOps Tips
 ## Unix Admin
 
 - [Add User to Group](Unix_Admin/Add_User_to_Group.md)
+- [Bash - Pitfalls (and guide)](http://mywiki.wooledge.org/BashPitfalls)
 - [Import CA Root Certificate to Linux](Unix_Admin/Import_CA_Root_Certificate.md)
 - [Manage Software Packages](Unix_Admin/Package_Manager.md)
 - [Rename User (on single-user Ubuntu machines)](Unix_Admin/Rename_Single_User.md)

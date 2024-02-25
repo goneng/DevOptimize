@@ -39,12 +39,12 @@ function add_cert {
 function list_certs {
   cert_db_type=$1
   cert_db_path=$2
-  cert_dir=$(dirname ${cert_db_path})
+  cert_dir=$(dirname "${cert_db_path}")
   cert_connection=${cert_db_type}:${cert_dir}
 
-  echo "-I- Existing Certificates __________________________________________"
-  echo "    (${cert_connection})"
-  certutil -d ${cert_connection} -L
+  echo "-I- Existing ${cert_db_type} Certificates in ${cert_db_path}__________________________________________"
+  echo "-D- (${cert_connection})"
+  certutil -d "${cert_connection}" -L
   echo
 }
 
@@ -107,14 +107,16 @@ sudo cp ${CERT_FILE} "${CERT_DEST}/"
 echo
 
 ### For cert8 (legacy - DBM)
-for CERT_DB in $(find ${HOME}/ -name "cert8.db")
+find ${HOME}/ -name 'cert8.db' |
+while read CERT_DB
 do
   list_certs dbm "${CERT_DB}"
   add_cert   dbm "${CERT_DB}" "${CERT_FILE_DEST}" "${CERT_NAME}"
 done
 
 ### For cert9 (SQL)
-for CERT_DB in $(find ${HOME}/ -name "cert9.db")
+find ${HOME}/ -name 'cert9.db' |
+while read CERT_DB
 do
   list_certs sql "${CERT_DB}"
   add_cert   sql "${CERT_DB}" "${CERT_FILE_DEST}" "${CERT_NAME}"
