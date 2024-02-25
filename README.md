@@ -2,6 +2,8 @@
 
 DevOps Tips
 
+([How to view Markdown in browser on Unix](https://superuser.com/a/1175837/160372) )
+
 - [git](#git)
 - [Python](#python)
 - [Unix Admin](#unix-admin)
@@ -27,3 +29,4 @@ DevOps Tips
 - [Add User to Group](Unix_Admin/Add_User_to_Group.md)
 - [Rename User (on single-user Ubuntu machines)](Unix_Admin/Rename_Single_User.md)
 - [Rename Host](Unix_Admin/Rename_Host.md)
+- [View Markdown in Browser on Unix](Unix_Admin/View_Markdown_on_Unix.md)
