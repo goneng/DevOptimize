@@ -30,6 +30,7 @@ DevOps Tips
 ## Unix Admin
 
 - [Add User to Group](Unix_Admin/Add_User_to_Group.md)
+- [Import CA Root Certificate to Linux](Unix_Admin/Import_CA_Root_Certificate.md)
 - [Rename User (on single-user Ubuntu machines)](Unix_Admin/Rename_Single_User.md)
 - [Rename Host](Unix_Admin/Rename_Host.md)
 - [View Markdown in Browser on Unix](Unix_Admin/View_Markdown_on_Unix.md)
