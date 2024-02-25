@@ -1,8 +1,9 @@
-# Rename a Host (set hostname) <!-- omit in toc -->
+# Change Hostname (Rename a Host) - Linux <!-- omit in toc -->
 
 Best-practices for naming hosts
 
-(from [Install Linux Virtual Delivery Agent for Ubuntu](https://docs.citrix.com/en-us/linux-virtual-delivery-agent/current-release/installation-overview/ubuntu.html) and [Change the Username and Hostname on Ubuntu](https://hepeng.me/changing-username-and-hostname-on-ubuntu/))
+(from [Install Linux Virtual Delivery Agent for Ubuntu](https://docs.citrix.com/en-us/linux-virtual-delivery-agent/current-release/installation-overview/ubuntu.html) \
+and [Change the Username and Hostname on Ubuntu](https://hepeng.me/changing-username-and-hostname-on-ubuntu/))
 
 - [Prerequisites](#prerequisites)
 - [Choose a Valid Hostname](#choose-a-valid-hostname)
