@@ -12,6 +12,7 @@ Set a sandboxed Python environment\
   - [Create the Virtual-Env](#create-the-virtual-env)
   - [Initialize the Virtual-Env](#initialize-the-virtual-env)
   - [Install Required Python Packages on the Virtual-Env](#install-required-python-packages-on-the-virtual-env)
+- [Exit the Virtual-Env](#exit-the-virtual-env)
 
 ## What is it good for
 
@@ -60,7 +61,7 @@ PyYAML==3.12
 Set a folder-name (and location) for your virtual env
 
 ```bash
-VENV_DIR=<virtual-env-path-and-name>
+export VENV_DIR=<virtual-env-path-and-name>
 ```
 
 ### Create the Virtual-Env
@@ -79,4 +80,12 @@ source "${VENV_DIR}/bin/activate"
 
 ```bash
 pip3 install -r ./requirements.txt
+```
+
+## Exit the Virtual-Env
+
+Case you would like to exit the virtualenv, run this:
+
+```bash
+deactivate
 ```

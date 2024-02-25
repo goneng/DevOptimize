@@ -19,6 +19,7 @@ DevOps Tips
 ## Python
 
 - [Set Virtual-Env](Python/Set_Virtual-Env.md)
+- [Install Ansible in a Virtual-Env](Python/Install_Ansible_in_Virtual-Env.md)
 
 ## Unix Admin
 
