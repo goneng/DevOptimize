@@ -6,15 +6,15 @@ DevOps Tips
 - [Python](#python)
 - [Unix Admin](#unix-admin)
 
-## git ##
+## git
 
 - [git aliases and shortcuts](git/source_git_aliases.bash)
 
-## Python ##
+## Python
 
 - [Set Virtual-Env](Python/Set_Virtual-Env.md)
 
-## Unix Admin ##
+## Unix Admin
 
 - [Add User to Group](Unix_Admin/Add_User_to_Group.md)
 - [Rename User and Host](Unix_Admin/Rename_User_and_Host.md)
