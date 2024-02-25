@@ -1,28 +1,27 @@
-# Rename User and/or Host #
+# Rename User and/or Host <!-- omit in toc -->
 
 On a single-user Linux (like X/Ubuntu)\
 this allows you to reassign the machine without reinstalling it.
 
 (base on <https://hepeng.me/changing-username-and-hostname-on-ubuntu/)>
 
-- [Rename User and/or Host](#rename-user-andor-host)
-  - [Rename User](#rename-user)
-    - [Disable Auto-Login](#disable-auto-login)
-    - [Unlock the root Account](#unlock-the-root-account)
-    - [Switch User to root](#switch-user-to-root)
-    - [Rename the User](#rename-the-user)
-    - [Rename the Group](#rename-the-group)
-    - [Optional: Change the User's Password](#optional-change-the-users-password)
-    - [Fix Permissions in Home-Dir](#fix-permissions-in-home-dir)
-    - [Confirm You can Log-In](#confirm-you-can-log-in)
-    - [Optional: Lock the root Account](#optional-lock-the-root-account)
-  - [Rename Host](#rename-host)
-    - [Change the Hostname](#change-the-hostname)
-    - [Fix the Hosts-List](#fix-the-hosts-list)
-    - [Reboot - for the hostname](#reboot---for-the-hostname)
-  - [Troubleshooting](#troubleshooting)
-    - [Error: Configured directory for incoming files does not exist](#error-configured-directory-for-incoming-files-does-not-exist)
-  - [Enjoy your New Host](#enjoy-your-new-host)
+- [Rename User](#rename-user)
+  - [Disable Auto-Login](#disable-auto-login)
+  - [Unlock the root Account](#unlock-the-root-account)
+  - [Switch User to root](#switch-user-to-root)
+  - [Rename the User](#rename-the-user)
+  - [Rename the Group](#rename-the-group)
+  - [Optional: Change the User's Password](#optional-change-the-users-password)
+  - [Fix Permissions in Home-Dir](#fix-permissions-in-home-dir)
+  - [Confirm You can Log-In](#confirm-you-can-log-in)
+  - [Optional: Lock the root Account](#optional-lock-the-root-account)
+- [Rename Host](#rename-host)
+  - [Change the Hostname](#change-the-hostname)
+  - [Fix the Hosts-List](#fix-the-hosts-list)
+  - [Reboot - for the hostname](#reboot---for-the-hostname)
+- [Troubleshooting](#troubleshooting)
+  - [Error: Configured directory for incoming files does not exist](#error-configured-directory-for-incoming-files-does-not-exist)
+- [Enjoy your New Host](#enjoy-your-new-host)
 
 ## Rename User ##
 
