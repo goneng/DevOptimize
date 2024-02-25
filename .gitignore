@@ -1,0 +1,5 @@
+# Git-Ignore file _________________________________________
+
+# Visual-Studio Code ______________________________________
+.vscode/
+*.code-workspace
