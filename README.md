@@ -24,4 +24,5 @@ DevOps Tips
 ## Unix Admin
 
 - [Add User to Group](Unix_Admin/Add_User_to_Group.md)
-- [Rename User and Host](Unix_Admin/Rename_User_and_Host.md)
+- [Rename User (on single-user Ubuntu machines)](Unix_Admin/Rename_Single_User.md)
+- [Rename Host](Unix_Admin/Rename_Host.md)
