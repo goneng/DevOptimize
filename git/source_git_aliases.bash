@@ -8,6 +8,7 @@ git config --global alias.cp      cherry-pick
 git config --global alias.last    'log -1 HEAD'
 git config --global alias.shame   'blame -w -M'
 git config --global alias.st      status
+git config --global alias.sw      switch
 git config --global alias.unstage 'reset HEAD --'
 
 # Show git-history, as graph (like a textual gitk)
