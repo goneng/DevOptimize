@@ -15,6 +15,8 @@ Tips for working with package-managers like `apt-get`
     - [List available packages](#list-available-packages)
     - [List _installed_ packages](#list-installed-packages)
     - [List _upgradable_ packages](#list-upgradable-packages)
+  - [Manage Package-Repository Keys](#manage-package-repository-keys)
+    - [Add a Missing Key](#add-a-missing-key)
   - [Refresh the List of Available Packages](#refresh-the-list-of-available-packages)
 
 &nbsp;
@@ -105,6 +107,19 @@ apt-file find  <filename>
 #### List _upgradable_ packages
 
 `apt list --upgradable`
+
+&nbsp;
+
+### Manage Package-Repository Keys
+
+#### Add a Missing Key
+
+- Run this to resolve errors like:\
+  `GPG error: ... The following signatures were invalid: EXPKEYSIG ...`
+- Can point to a different key-server, as long it is a server you trust
+- This format should work over firewalls/VPN as well
+
+`sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys <KEY>`
 
 &nbsp;
 
