@@ -13,14 +13,14 @@ DevOps Tips
 
 ## git
 
-- [git aliases and shortcuts](git/source_git_aliases.bash)
+- [git Aliases and Shortcuts](./git/source_git_aliases.sh)
+- [git Tips](./git/git_Tips.md)
 - git lectures by [_Paolo Perrotta_](https://app.pluralsight.com/profile/author/paolo-perrotta):
   - [Wrapping your Head Around git](https://vimeo.com/146478456)
   <!-- - [Understanding git (at "NoSlidesConf")](https://www.youtube.com/watch?v=nHkLxts9Mu4) -->
   - on PluralSight:
     - [Mastering git](https://www.pluralsight.com/courses/mastering-git#)
     - [How git Works](https://www.pluralsight.com/courses/how-git-works#)
-- [git Tips](./git/git_Tips.md)
 - [Learn Git-Branching via a Game(!)](https://learngitbranching.js.org/)\
   (can also skip the exercises and [just play-around with it](https://learngitbranching.js.org/?NODEMO))
 - [Set git-prompt for Unix](./git/Set_Git-Prompt_for_Unix.md)
