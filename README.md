@@ -5,6 +5,7 @@ DevOps Tips
 ([How to view Markdown in browser on Unix](https://superuser.com/a/1175837/160372) )
 
 - [git](#git)
+- [Azure DevOps](#azure-devops)
 - [MarkDown](#markdown)
 - [Python](#python)
 - [Unix Admin](#unix-admin)
@@ -26,6 +27,12 @@ DevOps Tips
 - [Learn Git-Branching via a Game(!)](https://learngitbranching.js.org/)\
   (can also skip the exercises and [just play-around with it](https://learngitbranching.js.org/?NODEMO))
 - [Set git-prompt for Unix](./git/Set_Git-Prompt_for_Unix.md)
+
+&nbsp;
+
+## Azure DevOps
+
+- [Azure DevOps - CLI](Azure_DevOps/Azure_DevOps_CLI.md)
 
 &nbsp;
 
