@@ -2,6 +2,10 @@
 # ____________________________________________________________________________
 # The Best ZshRC file, EVER
 
+# Force locale en_US.UTF-8 ____________________________________________________
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # If not running interactively, don't do anything ____________________________
 case $- in
   *i*) ;;
@@ -10,7 +14,7 @@ esac
 
 echo "running my .zshrc ($0)"
 
-# enable color support of ls and also add handy aliases ______________________
+# Enable color support of ls and also add handy aliases ______________________
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
@@ -34,20 +38,19 @@ MY_GIT_PROMPT_FILE=~/.zsh/git-prompt.sh
 if [ -f ${MY_GIT_PROMPT_FILE} ]
 then
   echo "${MY_GIT_PROMPT_FILE} ..."
-  source ${MY_GIT_PROMPT_FILE}
-  export GIT_PS1_SHOWCOLORHINTS=true # Option for git-prompt.sh to show branch name in color
+  source ${MY_GIT_PROMPT_FILE}        # Show git branch name at command prompt
+  export GIT_PS1_SHOWCOLORHINTS=true  # Option for git-prompt.sh to show branch name in color
 
   # Set some more options
   export GIT_PS1_SHOWDIRTYSTATE=true
   export GIT_PS1_SHOWUPSTREAM="auto"
 
-  # setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
-  setopt PROMPT_SUBST
+  setopt PROMPT_SUBST # Sets parameter-expansion, command-substitution and arithmetic-expansion to be performed in prompts
   # Append to the existing shell:
   # PS1+='$(__git_ps1 " (%s)") %# '
   # ...or replace the existing shell:
-  PS1='%n@%m %c$(__git_ps1 " (%s)") %# '
   # PS1='%n@%m %1~ $(__git_ps1 "[%s]") %# '
+    PS1='%n@%m %c$(__git_ps1 " (%s)") %# '
 else
   echo "(no ${MY_GIT_PROMPT_FILE})"
 fi
