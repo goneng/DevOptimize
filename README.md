@@ -4,12 +4,19 @@ DevOps Tips
 
 ([How to view Markdown in browser on Unix](https://superuser.com/a/1175837/160372) )
 
+- [Azure DevOps](#azure-devops)
 - [git](#git)
 - [GitLab](#gitlab)
 - [Jenkins](#jenkins)
 - [MarkDown](#markdown)
 - [Python](#python)
 - [Unix Admin](#unix-admin)
+
+&nbsp;
+
+## Azure DevOps
+
+- [Azure DevOps - CLI](Azure_DevOps/Azure_DevOps_CLI.md)
 
 &nbsp;
 
