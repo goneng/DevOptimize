@@ -4,12 +4,20 @@ DevOps Tips
 
 ([How to view Markdown in browser on Unix](https://superuser.com/a/1175837/160372) )
 
+- [Edge Computing](#edge-computing)
 - [git](#git)
 - [GitLab](#gitlab)
 - [Jenkins](#jenkins)
 - [MarkDown](#markdown)
 - [Python](#python)
 - [Unix Admin](#unix-admin)
+
+&nbsp;
+
+## Edge Computing
+
+- [Edge-Computing Explained](./Edge_Computing/edge-computing-explained.md)
+- [Software Update Tools - Comparison](./Edge_Computing/software-update-tools-comparison.md)
 
 &nbsp;
 
