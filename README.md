@@ -15,6 +15,8 @@ DevOps Tips
 - [MarkDown](#markdown)
 - [Python](#python)
 - [Unix Admin](#unix-admin)
+  - [Linux](#linux)
+  - [macOS](#macos)
 - [Tutorials, Guides and Tips](#tutorials-guides-and-tips)
 
 &nbsp;
@@ -89,17 +91,23 @@ DevOps Tips
 
 ## Unix Admin
 
+### Linux
+
 - [Add User to Group](Unix_Admin/Add_User_to_Group.md)
 - [Bash - Pitfalls (and guide)](http://mywiki.wooledge.org/BashPitfalls)
 - [Change Hostname - Linux](Unix_Admin/Change_Hostname_Linux.md)
-- [Change Hostname - macOS](Unix_Admin/Change_Hostname_macOS.md)
-- [Fix MS-Teams on macOS](Unix_Admin/Fix_MS_Teams_macOS.md)
 - [Import CA Root Certificate to Linux](Unix_Admin/Import_CA_Root_Certificate.md)
 - [Makefiles vs. Shell Aliases - A Comparison Guide](Unix_Admin/Makefiles_vs_Aliases.md)
 - [Manage Software Packages](Unix_Admin/Package_Manager.md)
 - [Rename User (on single-user Ubuntu machines)](Unix_Admin/Rename_Single_User.md)
-- [Set Default Date-Format on macOS Terminal](Unix_Admin/Set_Date-Format_macOS.md)
 - [View Markdown in Browser on Unix](Unix_Admin/View_Markdown_on_Unix.md)
+
+### macOS
+
+- [Add Linux to OpenCore Boot Menu on macOS (Dual-Boot)](Unix_Admin/macOS_OpenCore_Dual-Boot_Linux.md)
+- [Change Hostname - macOS](Unix_Admin/Change_Hostname_macOS.md)
+- [Fix MS-Teams on macOS](Unix_Admin/Fix_MS_Teams_macOS.md)
+- [Set Default Date-Format on macOS Terminal](Unix_Admin/Set_Date-Format_macOS.md)
 
 &nbsp;
 
