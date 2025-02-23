@@ -122,12 +122,17 @@ Before starting, ensure you have:
 2. Open Terminal
 3. Mount EFI:
    ```bash
-   sudo diskutil mount EFI
+   # List disks to find EFI partition
+   diskutil list
+   diskutil list | grep -i efi
+
+   # Mount EFI partition (usually disk0s1)
+   sudo diskutil mount disk0s1
    ```
 
 ### 5.2 Backup OpenCore Configuration
 ```bash
-sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.backup.plist
+sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.plist.SAVE_$(date +%Y%m%d_%H%M%S)
 ```
 
 ### 5.3 Modify OpenCore Configuration
