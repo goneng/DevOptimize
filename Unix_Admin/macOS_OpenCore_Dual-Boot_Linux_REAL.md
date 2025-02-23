@@ -102,13 +102,23 @@ Before starting, ensure you have:
    - Swap : 8GB or equal to RAM
    - EFI : Use existing
 6. Set bootloader location to EFI partition
-7. Complete installation
-8. Do NOT restart yet
+7. Complete installation but when prompted to restart:
+   - Click "Continue Testing" instead of restarting
+   - Open Terminal in the live environment
+   - Note down the path to your GRUB EFI file:
+     ```bash
+     # Temporary mount EFI partition is under /target/...
+     # because we still in "Linux-live" mode
+     ls /target/boot/efi/EFI/ubuntu/grubx64.efi
+     ```
+   - This confirms GRUB was installed correctly
+8. Now you can safely restart
 
 ## Step 5: OpenCore Configuration
 
 ### 5.1 Mount EFI Partition
-1. Boot back to macOS
+1. Hold Option key during restart
+2. Select your main macOS drive to boot back to macOS
 2. Open Terminal
 3. Mount EFI:
    ```bash
