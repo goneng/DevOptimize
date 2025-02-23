@@ -132,12 +132,14 @@ Before starting, ensure you have:
 
 ### 5.2 Backup OpenCore Configuration
 ```bash
+sudo ls -la /Volumes/EFI/EFI/OC/
 sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.plist.SAVE_$(date +%Y%m%d_%H%M%S)
 ```
 
 ### 5.3 Modify OpenCore Configuration
 1. Open config.plist with your preferred plist editor
-2. Add Linux boot entry under Misc -> Entries:
+2. Add Linux boot entry under `Misc -> Entries -> Array` section in `config.plist`:\
+   (may need to replace `<array/>` with `<array> ... </array>` tags)
    ```xml
    <dict>
        <key>Arguments</key>
@@ -155,7 +157,19 @@ sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.plist.SAVE_$
    </dict>
    ```
 3. Save changes
-4. Verify file permissions remain unchanged
+4. Validate the file and verify file-permissions remain unchanged
+   ```bash
+   # Verify config file is valid
+   plutil -lint /Volumes/EFI/EFI/OC/config.plist
+
+   # Confirm file permissions
+   ls -la /Volumes/EFI/EFI/OC/config.plist*
+   ```
+5. Unmount EFI partition
+   ```bash
+   # Unmount EFI partition
+   sudo diskutil unmount /Volumes/EFI
+   ```
 
 ## Step 6: Testing and Verification
 
