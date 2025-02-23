@@ -42,7 +42,8 @@ cp -p config.plist config.plist.SAVE_$(date +%Y%m%d_%H%M%S)
 ```
 
 ## 3. Add Linux Boot Entry
-Add the following entry to the `Misc -> Entries -> Array` section in `config.plist`:
+Add the following entry to the `Misc -> Entries -> Array` section in `config.plist`:\
+(may need to replace `<array/>` with `<array> ... </array>` tags)
 ```xml
 <dict>
     <key>Arguments</key>
