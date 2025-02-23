@@ -136,28 +136,44 @@ sudo ls -la /Volumes/EFI/EFI/OC/
 sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.plist.SAVE_$(date +%Y%m%d_%H%M%S)
 ```
 
-### 5.3 Modify OpenCore Configuration
-1. Open config.plist with your preferred plist editor
-2. Add Linux boot entry under `Misc -> Entries -> Array` section in `config.plist`:\
-   (may need to replace `<array/>` with `<array> ... </array>` tags)
-   ```xml
-   <dict>
-       <key>Arguments</key>
-       <string></string>
-       <key>Auxiliary</key>
-       <false/>
-       <key>Comment</key>
-       <string>Linux Mint</string>
-       <key>Enabled</key>
-       <true/>
-       <key>Name</key>
-       <string>Linux Mint</string>
-       <key>Path</key>
-       <string>\EFI\ubuntu\grubx64.efi</string>
-   </dict>
-   ```
-3. Save changes
-4. Validate the file and verify file-permissions remain unchanged
+### 5.3 Configure OpenLinuxBoot
+
+1. FIXME: (NOT RELEVANT) First verify your OCLP version is 0.3.1 or later (which uses OpenCore 0.7.4+)
+
+2. Set up required EFI drivers:
+   - Download `ext4_x64.efi` from: https://github.com/acidanthera/OcBinaryData/tree/master/Drivers
+   - Mount EFI partition if not already mounted:
+     ```bash
+     sudo diskutil mount EFI
+     ```
+   - Copy `ext4_x64.efi` to `/Volumes/EFI/EFI/OC/Drivers/`
+   - Verify `OpenLinuxBoot.efi` exists in the same directory (should be there by default with OCLP)
+
+3. Edit config.plist:
+   - Make a backup first:
+     ```bash
+     sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.backup.plist
+     ```
+   - Open config.plist with your preferred editor
+   - Navigate to the Drivers section
+   - Verify `OpenLinuxBoot.efi` entry exists
+   - Add new entry for `ext4_x64.efi` (copy existing entry format)
+   - Important: Ensure `ext4_x64.efi` is listed BEFORE `OpenLinuxBoot.efi`
+
+4. Verify these settings are enabled in config.plist:
+   - `RequestBootVarRouting`: true
+   - `LauncherOption`: true
+   - `HideAuxiliary`: true
+
+5. Additional required settings:
+   - Under Misc -> Security:
+     - Set `ScanPolicy` to `0` to enable scanning for Linux partitions
+     - Keep `ExposeSensitiveData` at `15` (or 0x0F in hex)
+     - Set `AllowSetDefault` to `true`
+
+6. Save changes
+
+7. Validate the file and verify file-permissions remain unchanged
    ```bash
    # Verify config file is valid
    plutil -lint /Volumes/EFI/EFI/OC/config.plist
@@ -165,11 +181,13 @@ sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.plist.SAVE_$
    # Confirm file permissions
    ls -la /Volumes/EFI/EFI/OC/config.plist*
    ```
-5. Unmount EFI partition
+8. Unmount EFI partition
    ```bash
    # Unmount EFI partition
    sudo diskutil unmount /Volumes/EFI
    ```
+
+Note: If you used a different filesystem for Linux installation (not ext4), you'll need to download and use the corresponding filesystem driver instead of ext4_x64.efi.
 
 ## Step 6: Testing and Verification
 
