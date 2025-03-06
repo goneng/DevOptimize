@@ -194,20 +194,17 @@ sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.plist.SAVE_$
    - Verify `OpenLinuxBoot.efi` exists in the same directory (should be there by default with OCLP)
 
 2. Edit config.plist:
-   - Make a backup first:
-     ```bash
-     sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.backup.plist
-     ```
-   - Open config.plist with your preferred editor
-   - Navigate to the Drivers section
+   - Open `/Volumes/EFI/EFI/OC/config.plist` with your preferred editor
+   - Navigate to the ***Drivers*** section
    - Verify `OpenLinuxBoot.efi` entry exists
    - Add new entry for `ext4_x64.efi` (copy existing entry format)
-   - Important: Ensure `ext4_x64.efi` is listed BEFORE `OpenLinuxBoot.efi`
+   - **Important:** \
+     Ensure `ext4_x64.efi` is listed BEFORE `OpenLinuxBoot.efi`
 
 3. Verify these settings are enabled in config.plist:
-   - `RequestBootVarRouting`: true
-   - `LauncherOption`: true
-   - `HideAuxiliary`: true
+   - `RequestBootVarRouting`: `true`
+   - `LauncherOption`: `Full` (or `true`)
+   - `HideAuxiliary`: `true`
 
 4. Additional required settings:
    - Under Misc -> Security:
@@ -224,6 +221,9 @@ sudo cp /Volumes/EFI/EFI/OC/config.plist /Volumes/EFI/EFI/OC/config.plist.SAVE_$
 
    # Confirm file permissions
    ls -la /Volumes/EFI/EFI/OC/config.plist*
+
+   # Confirm which changes were made
+   diff /Volumes/EFI/EFI/OC/config.plist.SAVE_* /Volumes/EFI/EFI/OC/config.plist
    ```
 7. Unmount EFI partition
    ```bash
