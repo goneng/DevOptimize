@@ -66,3 +66,19 @@ then
 else
   echo "(no ${MY_GIT_PROMPT_FILE})"
 fi
+
+# Load KubeCTL Completion ____________________________________________________
+#  - see https://komodor.com/learn/kubectl-autocomplete-enabling-and-using-in-bash-zsh-and-powershell/
+if command -v kubectl &> /dev/null
+then
+  MY_KUBECTL_COMPLETION_FILE=~/.bash/kubectl-completion.bash
+  (kubectl completion bash) > ${MY_KUBECTL_COMPLETION_FILE}
+  if [[ -f ${MY_KUBECTL_COMPLETION_FILE} ]]
+  then
+    source ${MY_KUBECTL_COMPLETION_FILE}
+  else
+    echo "(no ${MY_KUBECTL_COMPLETION_FILE})"
+  fi
+else
+  echo "(kubectl not found, skipping completion setup)"
+fi
