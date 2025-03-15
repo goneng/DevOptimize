@@ -64,12 +64,16 @@ autoload -Uz compinit && compinit
 
 # Load KubeCTL Completion ____________________________________________________
 #  - see https://komodor.com/learn/kubectl-autocomplete-enabling-and-using-in-bash-zsh-and-powershell/
-MY_KUBECTL_COMPLETION_FILE=~/.zsh/kubectl-completion.zsh
-(kubectl completion zsh) > ${MY_KUBECTL_COMPLETION_FILE}
-if [[ -f ${MY_KUBECTL_COMPLETION_FILE} ]]
+if command -v kubectl &> /dev/null
 then
-  source ${MY_KUBECTL_COMPLETION_FILE}
+  MY_KUBECTL_COMPLETION_FILE=~/.zsh/kubectl-completion.zsh
+  (kubectl completion zsh) > ${MY_KUBECTL_COMPLETION_FILE}
+  if [[ -f ${MY_KUBECTL_COMPLETION_FILE} ]]
+  then
+    source ${MY_KUBECTL_COMPLETION_FILE}
+  else
+    echo "(no ${MY_KUBECTL_COMPLETION_FILE})"
+  fi
 else
-  echo "(no ${MY_KUBECTL_COMPLETION_FILE})"
+  echo "(kubectl not found, skipping completion setup)"
 fi
-
