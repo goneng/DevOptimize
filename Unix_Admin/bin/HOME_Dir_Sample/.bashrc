@@ -15,13 +15,7 @@ esac
 
 echo "running my .bashrc ($0)"
 
-# Set the prompt
-PS1="\u@\h:\w\$ "
-
-# Add any aliases you want
-alias ll='ls -alF'
-
-# enable color support of ls and also add handy aliases ______________________
+# Enable color support of ls and also add handy aliases ______________________
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
@@ -38,7 +32,11 @@ then
   source ${MY_ALIASES_FILE}
 else
   echo "(no ${MY_ALIASES_FILE})"
+  alias ll='ls -alF'
 fi
+
+# Set a basic prompt
+PS1="\u@\h:\w\$ "
 
 # Enable command auto-completion
 if [ -f /etc/bash_completion ]
